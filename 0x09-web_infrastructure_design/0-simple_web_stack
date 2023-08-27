@@ -1,0 +1,39 @@
+TASK 0 OF WEB INFRASTRUCTURAL DESIGN
+link to the picture in imgur below
+
+https://imgur.com/pFpczzl
+
+An illustration to depict what happened in the picture
+1. a user/client request for a page using www.foobar.com
+2. the DNS (Domain name server) converts the domain name 'www.foobar.com' to an IP address 
+3. it is then transferred to the server which comprises of the web server, application server, database and application files
+4. the request first goes to the web server whic is used in displaying the static content (HTML, CSS and Javascript). The web server serves us to be able to store and transmit the data that is requested by the client (browser) to the Application Server.
+5. The application server is the one that provides the dynamic part to the application, since it will be in charge of managing most of the business logic and access to the application data.
+6. The Database Server which organises and keep data organized related for easy and fast access will respond to the request which the information is transferred back to the user. 
+
+The Server
+- The server in the diagram is located in a datacenter (a specially designed structure to hold thousands of machines).
+- It could either be a physical or virtual (i.e an instance of a physical server) and it runs a special operating system that helps it perform its services to the end users.
+
+One Web Server
+- the main role of te webserver is to serve web pages
+
+One Application Server
+- This application server's fundamental purpose is to process web server requests and generate dynamic content from a business logic and application database in the backend.
+
+One Database
+- The primary role of the database is to store application data.
+
+Domain Name / Domain Name System (DNS)
+- The DNS helps translate the domain name record to an IP address
+- The hosted website by the infrastructure; www.foobar.com is an A record because it resolves to an IP address(IPV4), 8.8.8.8
+
+
+Problems
+
+- Server is a Single Point of Failure (SPOF) because nothing is redundant
+- When new code is deployed, the website will be down
+- it will not be able to handle traffic that exceed server capacity
+
+Protocol
+The server here uses the TCP/IP protocol to communicate with the computer of the user requesting the website.
