@@ -1,0 +1,21 @@
+TASK 1 OF WEB INFRASTRUCTURAL DESIGN
+link to the picture in imgur below
+https://imgur.com/cYF99tI
+
+Additional Elements
+-two servers 
+- Web Servers were added so that there will be redundancy with the added server
+- One Load Balancer (HAProxy)which distribute the traffic between the two servers
+
+Load Balancer Configuration
+Load balancer is configured to have an active-active setup. Active-Active setup deploy two or more active system instances and can be used to improve scalability as well as provide high availability. In active-active deployments, all instances handle requests concurrently while Active-passive solutions deploy an active instance that handles requests and a passive instance that is on standby.
+
+Data Synchronization
+- The MySQL Master-Replica cluster used replication to keep data synchronized. This master-slave replication system prevents any downtime as the slave (which is a constant live backup of the database) can always be promoted to master if the original master server crashes.
+- As the Master-Slave replication is a one-way replication (from master to slave), only the Master database node can accept reads/write while Replica can only accept reads
+
+Problems With This Infrastructure
+- The load balancer is a single point of failure as its failure would spell the crashing of this infrastructure
+- No firewall on servers
+- Traffic is unencrypted owing to the fact there is no TLS (or SSL) to encrypt the HTTP requests and responses
+- No monitoring
