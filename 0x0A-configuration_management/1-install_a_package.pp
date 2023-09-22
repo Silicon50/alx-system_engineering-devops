@@ -1,5 +1,6 @@
 # Create a Puppet manifest to install Flask version 2.1.0 using pip3
 
+# installing Flask
 class install_flask {
   # Install Flask from package 
   package { 'flask':
