@@ -1,17 +1,11 @@
-# Using Puppet, install 2.1.0 flask  from pip3.
+# puppet_flask.pp
 
-# Ensure pip3 is install
 package { 'python3-pip':
-  ensure => installed,
+  ensure => 'installed',
 }
 
-# Install Flask using pip3
 exec { 'install_flask':
-  command => 'pip3 install Flask==2.1.0',
-  path    => ['/usr/bin', '/usr/local/bin'],
-  ensure  => '2.1.0',
-  creates => '/usr/local/lib/python3.x/dist-packages/Flask',
+  command => '/usr/bin/pip3 install flask==2.1.0',
+  path    => ['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'],
+  require => Package['python3-pip'],
 }
-
-# Apply the class to install Flask
-include install_flask
