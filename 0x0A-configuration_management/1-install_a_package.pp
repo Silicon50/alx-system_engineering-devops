@@ -9,6 +9,7 @@ package { 'python3-pip':
 exec { 'install_flask':
   command => 'pip3 install Flask==2.1.0',
   path    => ['/usr/bin', '/usr/local/bin'],
+  ensure  => '2.1.0',
   creates => '/usr/local/lib/python3.x/dist-packages/Flask',
 }
 
